@@ -1,0 +1,76 @@
+:root{
+  --red:#4d0712;
+  --red-deep:#27030a;
+  --red-soft:#6d1521;
+  --gold:#d8ad58;
+  --gold-light:#f0d49a;
+  --cream:#fbf1dd;
+  --ink:#321a16;
+  --muted:#8d6e5f;
+  --shadow:0 20px 55px rgba(53,12,12,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden}
+body.locked{overflow:hidden}
+button,a{font:inherit}
+a{color:inherit}
+.telugu,.namam{font-family:"Noto Serif Telugu","Nirmala UI",serif}
+.section-pad{padding:clamp(72px,10vw,130px) 6vw}
+.section-dark{background:var(--red-deep);color:#fff}
+.parchment{background:radial-gradient(circle at 50% 0%,#fff9ec 0,#fbf1dd 48%,#f4e3c7 100%);position:relative;overflow:hidden}
+
+.preloader{position:fixed;inset:0;z-index:1000;background:#090204 url("assets/venkateswara.jpg") center/cover no-repeat;display:grid;place-items:center;transition:opacity .8s ease,visibility .8s ease}
+.preloader:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,1,4,.52),rgba(29,2,8,.88))}
+.preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-inner{position:relative;z-index:1;text-align:center;padding:30px;max-width:720px}
+.namam{font-size:clamp(1.6rem,4vw,3rem);font-weight:700;font-style:italic;letter-spacing:.02em;color:var(--gold-light);text-shadow:0 3px 20px rgba(0,0,0,.5)}
+.hero-namam{font-size:clamp(1.3rem,3vw,2.2rem)}
+.mini-line{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px auto}
+.preloader-sub{color:#f8e9cb;font-size:1.05rem}
+.enter-btn{margin-top:34px;border:1px solid rgba(240,212,154,.65);background:rgba(82,5,17,.58);color:#fff7e5;padding:13px 27px;border-radius:999px;cursor:pointer;letter-spacing:.08em;transition:.25s}
+.enter-btn:hover{transform:translateY(-2px);background:rgba(118,15,31,.78)}
+.enter-btn span{color:var(--gold-light);margin-left:10px}
+.tap-note{font-size:.78rem;opacity:.7;margin-top:14px;color:#f5e8d0}
+
+.music-toggle{position:fixed;z-index:900;right:18px;top:18px;width:45px;height:45px;border-radius:50%;border:1px solid rgba(240,212,154,.55);background:rgba(43,4,10,.78);color:var(--gold-light);font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:.3s}
+.music-toggle.visible{opacity:1;pointer-events:auto}
+.maps-skip{position:fixed;z-index:900;left:18px;top:18px;display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid rgba(240,212,154,.55);border-radius:999px;background:rgba(43,4,10,.78);color:#f0d49a;text-decoration:none;font-size:.78rem;letter-spacing:.04em;backdrop-filter:blur(8px);transition:.25s;opacity:0;pointer-events:none}.maps-skip.visible{opacity:1;pointer-events:auto}.maps-skip:hover{background:rgba(92,8,23,.9);transform:translateY(-1px)}.maps-skip span{font-size:1rem}
+.music-toggle.playing{box-shadow:0 0 0 5px rgba(216,173,88,.12)}
+
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden}
+.hero-image,.closing-image{position:absolute;inset:0;background:center/cover no-repeat}
+.hero-image{background-image:url("assets/venkateswara.jpg");background-position:center 40%}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(30,7,8,.08),rgba(5,1,4,.82) 78%),linear-gradient(180deg,rgba(8,2,4,.38),rgba(22,2,7,.75))}
+.stars{position:absolute;inset:0;opacity:.7;background-image:radial-gradient(circle,rgba(255,235,175,.8) 0 1px,transparent 1.6px);background-size:88px 83px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:80px 22px 60px;max-width:900px}
+.gold-divider{color:var(--gold);margin:18px 0;font-size:1.1rem;display:flex;align-items:center;gap:15px;justify-content:center}.gold-divider:before,.gold-divider:after{content:"";height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--gold))}.gold-divider:after{background:linear-gradient(90deg,var(--gold),transparent)}
+.eyebrow{font-size:1rem;letter-spacing:.14em;color:#f0d49a;margin:0 0 18px}
+.hero h1{margin:0;display:flex;flex-direction:column;line-height:.82;font-size:clamp(4.5rem,14vw,9.5rem);font-weight:500;letter-spacing:-.035em;color:#fff8eb;text-shadow:0 7px 35px rgba(0,0,0,.35)}
+.hero h1 b{font-size:.34em;font-weight:400;color:var(--gold);line-height:1;margin:.17em 0}.invite-line{font-style:italic;color:#e9d2a7;font-size:1.2rem;margin:30px 0 10px}.hero-date{font-size:1.25rem;letter-spacing:.28em;color:#fff0cf}.hero-location{margin-top:9px;font-size:.95rem;color:#ddc8a0}.scroll-cue{margin-top:50px;font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:#e3c993;display:flex;flex-direction:column;gap:8px}.scroll-cue span{font-size:1.4rem;animation:bounce 1.8s infinite}
+
+.content-narrow{max-width:780px;margin:auto;text-align:center}.ornament{position:absolute;color:#c89a4d;font-size:4rem;opacity:.5}.top-ornament{top:18px;left:8%}.bottom-ornament{bottom:0;right:8%;transform:rotate(180deg)}
+.section-kicker{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:#a9783b;margin:0 0 16px}.section-heading{text-align:center;max-width:760px;margin:0 auto 50px}.section-heading.light .section-kicker{color:#d9b46b}.section-heading h2,.content-narrow h2{font-size:clamp(2.8rem,6vw,5rem);line-height:.95;font-weight:500;margin:0}.section-heading h2 em,.content-narrow h2 em{font-style:italic;color:var(--red-soft)}.content-narrow .body-copy{font-size:1.2rem;line-height:2;margin:35px auto 28px;max-width:650px;color:#694d40}.names-script{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--red)}.names-script span{color:#b88a39;margin:0 8px}
+
+.couple-section{background:#f8ead6}.couple-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,42px);max-width:1050px;margin:auto}.portrait-card{background:#fff7eb;padding:12px;box-shadow:var(--shadow)}.portrait{aspect-ratio:4/5;overflow:hidden;background:#ddd}.portrait img{width:100%;height:100%;display:block;object-fit:cover}.bride-portrait img{object-position:center 27%}.groom-portrait img{object-position:center 42%}.portrait-caption{padding:18px 12px 10px;text-align:center}.portrait-role{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#a9783b}.portrait-caption h3{font-size:2.15rem;font-weight:500;margin:6px 0 0;color:var(--red)}
+
+.countdown-section{position:relative;overflow:hidden}.floral-strip{position:absolute;inset:0;background:url("assets/floral-backdrop.jpg") center/cover no-repeat;opacity:.12;mix-blend-mode:screen}.countdown-section:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#27030a 0%,rgba(63,5,15,.82),#27030a 100%)}.countdown-section>*:not(.floral-strip){position:relative;z-index:1}.section-heading.light h2{color:#fff4de}.section-heading.light h2 em{color:var(--gold-light)}.section-heading.light>p:last-child{color:#dbc8a9;margin-top:18px}.countdown{display:flex;justify-content:center;align-items:center;gap:clamp(12px,3vw,35px);margin-top:45px}.countdown div{text-align:center;min-width:80px}.countdown strong{display:block;font-size:clamp(2.7rem,7vw,5.4rem);font-weight:500;color:var(--gold-light);line-height:1}.countdown span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#d7c0a0}.countdown i{font-style:normal;color:#8c5a48;font-size:2.5rem;margin-top:-18px}
+
+.events{border-top:1px solid rgba(150,99,47,.14)}.event-list{max-width:950px;margin:auto;display:grid;gap:26px}.event-card{display:grid;grid-template-columns:100px 1fr;background:rgba(255,250,238,.74);border:1px solid rgba(153,101,49,.2);box-shadow:0 15px 40px rgba(90,48,24,.08)}.event-number{padding:34px 20px;border-right:1px solid rgba(153,101,49,.16);font-size:1.8rem;color:#b2843c;text-align:center}.event-main{padding:34px clamp(22px,5vw,48px)}.event-kicker{margin:0;color:#a9783b;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase}.event-main h3{margin:7px 0 2px;font-size:2.5rem;font-weight:500;color:var(--red)}.event-date{margin:0;color:#75574b}.event-time{font-size:2rem;color:#3b211b;margin:22px 0 18px}.event-time span{font-size:.7em;color:#9b7040;letter-spacing:.12em}.event-venue{border-top:1px solid rgba(130,84,42,.18);padding-top:17px;display:flex;flex-direction:column;gap:3px}.event-venue strong{font-size:1.2rem;font-weight:600}.event-venue span{color:#75574b}.map-btn{display:inline-block;margin-top:22px;text-decoration:none;border:1px solid #a97a38;color:#74370e;padding:10px 16px;border-radius:999px;font-size:.86rem;transition:.2s}.map-btn:hover{background:#6b0d1a;color:#fff1d1;border-color:#6b0d1a}
+
+.decor-section{height:min(60vw,560px);min-height:330px;position:relative;overflow:hidden}.decor-section img{width:100%;height:100%;object-fit:cover}.decor-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(37,3,9,.62),transparent 55%,rgba(37,3,9,.3))}.decor-copy{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:#fff8e9;text-shadow:0 3px 12px rgba(0,0,0,.85);padding:24px}.decor-copy:before{content:"";position:absolute;z-index:-1;width:min(92%,560px);height:170px;border-radius:28px;background:rgba(38,4,10,.58);border:1px solid rgba(240,212,154,.28);box-shadow:0 14px 45px rgba(0,0,0,.24);backdrop-filter:blur(2px)}.decor-copy span{font-size:1.1rem;letter-spacing:.2em;text-transform:uppercase}.decor-copy strong{font-family:"Noto Serif Telugu",serif;font-size:clamp(3rem,9vw,6.5rem);font-style:italic;color:#f0cf84;margin-top:8px}
+
+.family-section{background:#f8ead6}.family-grid{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.family-card{text-align:center;padding:42px 24px;border:1px solid rgba(150,99,47,.25);background:rgba(255,248,234,.55)}.family-label{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#a9783b}.family-card h3,.family-card p{font-size:1.5rem;line-height:1.35;font-weight:500;color:var(--red);margin:16px 0 7px}.family-card p{margin:0;color:var(--red)}
+
+.closing{min-height:90svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden}.closing-image{background-image:url("assets/venkateswara.jpg");background-position:center 48%;filter:saturate(.85)}.closing-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,2,7,.75),rgba(25,2,7,.9))}.closing-content{position:relative;z-index:2;padding:80px 22px;max-width:800px}.closing h2{font-size:clamp(3rem,7vw,6rem);line-height:.9;font-weight:500;margin:30px 0 18px}.closing h2 em{color:var(--gold-light)}.closing-content>p{color:#d9c2a2}.closing-names{font-family:"Playfair Display",serif;font-style:italic;color:#fff3db;font-size:1.8rem;margin:26px 0}.thankyou{font-size:1.05rem;color:#e4cfaa!important}
+footer{text-align:center;background:#190107;color:#b99569;padding:18px;font-size:.75rem;letter-spacing:.05em}
+
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s ease,transform .8s ease}.reveal.in-view{opacity:1;transform:none}.delay-1{transition-delay:.13s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media(max-width:720px){.maps-skip{left:12px;top:12px;font-size:.7rem;padding:8px 11px}.music-toggle{right:12px;top:12px}.section-pad{padding:72px 20px}.hero h1{font-size:clamp(4rem,19vw,6.7rem)}.hero-location{font-size:.83rem}.couple-grid,.family-grid{grid-template-columns:1fr}.portrait-card{max-width:480px;margin:auto;width:100%}.countdown{gap:7px}.countdown div{min-width:61px}.countdown strong{font-size:clamp(2rem,11vw,3.3rem)}.countdown i{font-size:1.5rem}.event-card{grid-template-columns:58px 1fr}.event-number{padding:28px 10px;font-size:1.2rem}.event-main{padding:28px 20px}.event-main h3{font-size:2rem}.decor-section{height:420px}.top-ornament{left:2%}.bottom-ornament{right:2%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none}.scroll-cue span{animation:none}}
+
+/* V2 refinements */
+.invitation .section-kicker, .events .section-kicker, .family-section .section-kicker{font-size:clamp(1.25rem,3.2vw,1.7rem);font-weight:700;font-style:italic;letter-spacing:.04em}
+.events .event-card:nth-child(2) .event-kicker{font-size:clamp(1.35rem,3vw,1.7rem);font-weight:700;font-style:italic;letter-spacing:.02em}
+.family-label{font-weight:600}
